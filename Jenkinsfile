@@ -9,7 +9,8 @@ pipeline {
             steps {
                 // Checkout your Angular project from the repository
                 git branch: 'master', url: 'https://github.com/spalodka/angular-docker-app.git',
-                credentialsId:'464d97b6-bda6-4d7c-a219-2c4a70fd3129'
+                credentialsId:'464d97b6-bda6-4d7c-a219-2c4a70fd3129',
+                gitTool: 'Default'
             }
         }
 
