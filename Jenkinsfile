@@ -30,13 +30,13 @@ pipeline {
             }
         }
 
-        stage('Install Netlify CLI') {
-            steps {
-                echo 'installing netlify cli..............'
-                // Install Netlify CLI locally (if not installed globally)
-                sh 'npm install -g netlify-cli'
-            }
-        }
+        // stage('Install Netlify CLI') {
+        //     steps {
+        //         echo 'installing netlify cli..............'
+        //         // Install Netlify CLI locally (if not installed globally)
+        //         sh 'npm install -g netlify-cli'
+        //     }
+        // }
 
         stage('Check Netlify CLI') {
     steps {
