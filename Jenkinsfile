@@ -26,7 +26,7 @@ pipeline {
             steps {
                 echo 'starting  builiding angular app............'
                 // Build the Angular app (production build)
-                sh 'ng build --prod'
+                sh 'ng build --configuration production'
             }
         }
 
