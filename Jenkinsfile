@@ -53,7 +53,7 @@ pipeline {
                     netlify deploy --prod \
                     --auth $NETLIFY_AUTH_TOKEN \
                     --site $NETLIFY_SITE_ID \
-                    --dir dist/angular-app
+                    --dir dist/angular-docker-app
                 '''
             }
         }
