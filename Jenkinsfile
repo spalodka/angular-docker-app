@@ -1,9 +1,9 @@
 pipeline {
     agent any
-    environment {
-        NETLIFY_AUTH_TOKEN = credentials('nfp_tgeYUodECkGLRZrqHwhS5rB32UTZWkYr1e4d')  // You can set this in Jenkins credentials
-        NETLIFY_SITE_ID = '0052fc7b-3176-4493-96cf-404c8c523cc9'  // Replace with your Netlify site ID
-    }
+    // environment {
+    //     NETLIFY_AUTH_TOKEN = credentials('nfp_r4wZGgQPp6LNadd5tqMdJJHzovUBxo6gcf57')  // You can set this in Jenkins credentials
+    //     NETLIFY_SITE_ID = '0052fc7b-3176-4493-96cf-404c8c523cc9' // Replace with your Netlify site ID
+    // }
     stages {
         stage('Checkout') {
             steps {
@@ -51,8 +51,8 @@ pipeline {
                 // Deploy to Netlify using the CLI
                 sh '''
                     netlify deploy --prod \
-                    --auth $NETLIFY_AUTH_TOKEN \
-                    --site $NETLIFY_SITE_ID \
+                    --auth 'nfp_r4wZGgQPp6LNadd5tqMdJJHzovUBxo6gcf57' \
+                    --site '0052fc7b-3176-4493-96cf-404c8c523cc9' \
                     --dir dist/angular-docker-app
                 '''
             }
