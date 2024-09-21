@@ -58,6 +58,23 @@ pipeline {
             }
         }
     }
+
+    post {
+        success {
+            emailext(
+                to: 'sandippalodkar7@gmail.com',
+                subject: "SUCCESS: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]'",
+                body: """<p>Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]' succeeded.</p>"""
+            )
+        }
+        failure {
+            emailext(
+                to: 'sandippalodkar7@gmail.com',
+                subject: "FAILURE: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]'",
+                body: """<p>Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]' failed.</p>"""
+            )
+        }
+    }
 }
 
 
